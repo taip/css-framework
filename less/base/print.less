@@ -1,0 +1,89 @@
+/* Print =================================================== */
+
+* { 
+  background : transparent !important; 
+  color : black !important; 
+  box-shadow : none !important; 
+  text-shadow : none !important; 
+  filter : none !important; 
+  -ms-filter : none !important;
+}
+
+@page { 
+  margin : 0.5cm;
+}
+
+h2, h3 { 
+  orphans : 3; 
+  widows : 3; 
+  page-break-after : avoid;
+}
+
+p { 
+  orphans : 3; 
+  widows : 3;
+}
+
+pre, blockquote { 
+  border : 1px solid @grey; 
+  page-break-inside : avoid;
+}
+
+abbr[title]:after { 
+  content: " (" attr(title) ")";
+}
+
+a, a:visited { 
+  text-decoration : underline;
+}
+
+a[href]:after { 
+  content : " (" attr(href) ")"; 
+  .font-size(13); 
+  font-style: italic;
+}
+
+a[href^="javascript:"]:after, 
+a[href^="#"]:after,
+a.site-logo[href]:after { 
+  content : "";
+}
+
+img { 
+  max-width : 100% !important;
+  page-break-inside : avoid;
+}
+
+thead { 
+  display : table-header-group;
+} 
+
+tr { 
+  page-break-inside : avoid;
+}
+
+::-webkit-input-placeholder {
+  color: transparent;
+}
+:-moz-placeholder {
+  color: transparent;
+}
+::-moz-placeholder {
+  color: transparent;
+}
+:-ms-input-placeholder {
+  color: transparent;
+}
+
+nav,
+.btn,
+.btn-link {
+  display: none;
+}
+
+.alert {
+  border: none;
+  border-radius: 0;
+  padding-left: 0;
+  padding-right: 0;
+}

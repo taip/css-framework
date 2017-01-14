@@ -1,0 +1,42 @@
+// Media Object
+// media subclasses use :extend rather than adding classes to html
+
+.media {
+  .margin-bottom(@basebottommargin);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0.5em;
+  &:last-child,
+  &:only-child {
+    margin-bottom: 0;
+  }
+}
+
+.media__figure,
+.media__body {
+  padding: 0.5em;
+}
+
+.media__figure {
+  margin-bottom: 0;
+  max-width: 150px;
+}
+
+.media__body {
+  flex: 1;
+  & >:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.media--center {
+  &:extend(.media);
+  align-items: center;
+}
+
+.media--reverse {
+  &:extend(.media);
+  flex-direction: row-reverse;
+}

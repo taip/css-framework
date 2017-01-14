@@ -1,0 +1,102 @@
+// Tai's Simple (Non-Grid-System) Columns
+
+// These mixins are applied to each column rather than the container.
+// These items can repeat and form new lines without separate "row" wrapper divs; 
+// however, do not combine different column widths in a single container.
+
+.halves() {
+  float: left;
+  width: ~'calc(@{onehalf} - (@{gutterwidth} * 2))';
+  margin-right: @gutterwidth;
+  margin-left: @gutterwidth;
+  &:nth-of-type(1n) {
+    width: ~'calc(@{onehalf} - @{gutterwidth})';
+    margin-right: ~'calc(@{gutterwidth} * 2)';
+    margin-left: 0;
+  }
+  &:nth-of-type(2n) {
+    width: ~'calc(@{onehalf} - @{gutterwidth})';
+    margin-right: 0;
+    margin-left: 0;
+  }
+  &:nth-of-type(2n+1) {
+    clear: left;
+  }
+}
+
+.thirds() {
+  float: left;
+  width: ~'calc(@{onethird} - @{gutterwidth})';
+  margin-right: ~'calc(@{gutterwidth} / 2)';
+  margin-left: ~'calc(@{gutterwidth} / 2)';
+  &:nth-of-type(1n) {
+    width: 32%;
+    margin-right: 2%;
+    margin-left: 0;
+  }
+  &:nth-of-type(2n) {
+    width: 32%;
+    margin-right: 2%;
+    margin-left: 0;
+  }
+  &:nth-of-type(3n) {
+    width: 32%;
+    margin-right: 0;
+    margin-left: 0;
+  }
+  &:nth-of-type(2n+1) {
+    clear: none;
+  }
+  &:nth-of-type(3n+1) {
+    clear: left;
+  }
+}
+
+.col--major + .col--minor,
+.col--minor + .col--major {
+  margin-top: @baselineheight;
+}
+
+@media only screen and (min-width: @column-breakpoint-sm) {
+  .col--third {
+    .halves();
+  }
+}
+
+@media only screen and (min-width: @column-breakpoint-med) {
+  .col--half {
+    .halves();
+  }
+  .col--third {
+    .thirds();
+  }
+  
+  // ratios for major/minor can be changed as long as they add up to 100%
+  .col--major {
+    float: left;
+    width: ~'calc(@{goldenlarger} - @{gutterwidth} * 2)';
+  }
+  .col--minor {
+    float: left;
+    width: ~'calc(@{goldensmaller} - @{gutterwidth} * 2)';
+  }
+  
+  .col--major + .col--minor,
+  .col--minor + .col--major {
+    margin-top: 0;
+    margin-left: @gutterwidth * 4;
+  }
+}
+
+// A single, solo column to limit line length
+.col--solo {
+  display: block;
+  clear: both;
+  max-width: @line-length;
+}
+.col--solo--centered {
+  &:extend(.col--solo);
+  float: none;
+  margin-right: auto;
+  margin-left: auto;
+}

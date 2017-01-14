@@ -1,0 +1,43 @@
+// Banners
+
+.banner {
+  margin: 0;
+  padding: @baselineheight*2 0;
+  background: @primarycolor;
+  color: @white;
+  .font-size(21);
+  .clearfix;
+  p,
+  blockquote {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media only screen and (min-width: 40em) {
+  .banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .banner__text {
+    margin-right: 5%;
+  }
+  .banner__cta {
+    text-align: right;
+    margin-top: 0;
+    flex-shrink: 0;
+  }
+  .no-flexbox & {
+    .banner__text {
+      float: left;
+      width: 75%;
+      margin-right: 2%;
+    }
+    .banner__cta {
+      float: right;
+      width: 23%;
+    }
+  }
+}

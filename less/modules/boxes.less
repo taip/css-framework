@@ -1,0 +1,53 @@
+// Boxes
+
+.box {
+  box-sizing: border-box;
+  .margin-bottom(@basebottommargin);
+/*
+  &:last-child,
+  &:only-child {
+    margin-bottom: 0;
+  }
+*/
+  > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// Types of Boxes
+
+.box--neutral {
+  &:extend(.box all);
+  background: @lighterneutralcolor;
+}
+
+.box--card {
+  &:extend(.box all);
+  background: @white;
+  border: 1px solid @bordercolor;
+  border-radius: @borderradius;
+  .shadow;
+}
+
+.box--callout {
+  border: 3px solid @primarycolor;
+}
+
+.box--padded {
+  padding: 1em;
+}
+
+// Parts of Boxes
+
+.box__body {
+  box-sizing: border-box;
+  padding: 1em;
+  .clearfix;
+  &.media {
+    padding: 0.5em;
+    margin-bottom: 0;
+  }
+  > *:last-child {
+    margin-bottom: 0;
+  }
+}

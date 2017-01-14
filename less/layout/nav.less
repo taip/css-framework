@@ -1,0 +1,145 @@
+/* Navigation */
+
+// Breakpoint for switching from "mobile" nav
+@nav-break: 37.5em;
+
+.nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.main-nav {
+  
+}
+
+// Links
+.main-nav li > a {
+  float: none;
+  padding: 0.5em 1em;
+  background-color: @navLinkBackground;
+  color: @navLinkColor;
+  text-decoration: none;
+  display: block;
+  &:hover,
+  &:focus {
+    color: @navLinkColorHover;
+    text-decoration: none;
+    text-shadow: none;
+    background-color: @navLinkBackgroundHover;
+  }
+}
+
+// Current nav items
+.main-nav .current > a,
+.main-nav .current > a:hover,
+.main-nav .current > a:focus {
+  color: @navLinkColorCurrent;
+  text-decoration: none;
+  background-color: @navLinkBackgroundCurrent;
+}
+
+@media only screen and (min-width: @nav-break) {
+  .main-nav li {
+    display: inline-block;
+  }
+}
+
+// Navbar search
+.nav__search {
+  position: relative;
+  margin-bottom: 0;
+  input[type='text'],
+  input[type='search'] {
+    float: left;
+    margin-bottom: 0;
+    padding: 4px 27px 4px 14px;
+    border-radius: 30px;
+  }
+  button[type='submit'] {
+    float: left;
+    width: 25px;
+    height: 25px;
+    border: none;
+    background: none;
+    margin-left: -27px;
+    margin-top: 1px;
+  }
+}
+
+// Breadcrumbs
+
+.breadcrumb {
+  .font-size(13);
+  color: @lighterneutralcolor;
+  margin-left: -0.35em;
+  margin-bottom: @baselineheight;
+  li {
+    display: inline-block;
+    margin-left: 0.35em;
+    &:after {
+      /* forward slashes */
+      /* content: '\2044'; */
+      /* 'greater than' signs */
+      content: '\003E';
+    }
+    &:last-child:after {
+      content: '';
+    }
+    a {
+    margin-right: 0.65em;
+    }
+  }
+}
+
+
+// Pagination
+
+.pagination {
+  // Apply to nav element, wrapping an unordered list
+  .clearfix();
+  clear: both;
+  padding: (@baselineheight/2) 0;
+  > p {
+    float: left;
+    margin: 0;
+  }
+  > ul {
+    margin: 0;
+    list-style: none;
+    > li {
+      display: inline;
+    }
+  }
+  // .next and .prev go on the li
+  .next, 
+  .prev {
+    width: 48%;
+  }
+  .next {
+    float: right;
+    margin-left: 1%;
+    text-align: right;
+  }
+  .prev {
+    float: left;
+    margin-right: 1%;
+  }
+}
+
+.pagination--listing {
+	// Pagination on multiple entry listing pages only. Should also include .pagination class
+	text-align: center;
+	strong, a {
+  	display: inline-block;
+  	padding: 0.25em 0.75em;
+	}
+	a {
+  	margin: 0 2px;
+    &:hover,
+    &:active,
+    &:focus {
+    	text-decoration: none;
+    }
+	}
+}

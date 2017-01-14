@@ -1,0 +1,194 @@
+// Variables ===================================================
+
+// 1. ROOT          ==============================
+
+@bodycolor: @white;
+@textcolor: #444;
+@lighttextcolor: tint(@textcolor, 30%);
+@lightertextcolor: tint(@textcolor, 60%);
+
+// 2. TYPOGRAPHY      ==============================
+
+@basefont: @sansfont;
+@basefontsize: 16;
+@baselineheight: 1.5em;
+@baseleftpadding: 1.2em;
+@basebottommargin: 1.5;
+
+@baseheadingfont : inherit;
+@baseheadingfontweight : bold;
+@baseheadingfontcolor : inherit;
+@h1size: 40;
+@h2size: 32;
+@h3size: 24;
+@h4size: 21;
+@h5size: 18;
+@h6size: 16;
+
+@altfont: @seriffont;
+@altlineheight: 1.35em;
+
+@seriffont: Cambria, Georgia, "Times New Roman", Times, serif;
+@seriffont2: Baskerville, Garamond, Palatino, "Times New Roman", Times, serif;
+@sansfont: 'Open Sans', "Helvetica Neue", Helvetica, Calibri, Arial, sans-serif;
+@sansfont2: Verdana, Corbel, Tahoma, sans-serif;
+@codefont: Monaco, Consolas, Courier New, monospace;
+
+@line-length: 40em;
+
+// 3. COLOR        ==============================
+
+// Main Color Palette
+@blue     : blue;
+@red      : red;
+@yellow   : yellow;
+
+// Neutral Colors
+@darkneutralcolor         : @darkgrey;
+@midneutralcolor        : @midgrey;
+@neutralcolor           : @grey;
+@lightneutralcolor        : @lightgrey;
+@lighterneutralcolor      : @lightergrey;
+@lightestneutralcolor       : @lightestgrey;
+
+// Greyscale
+@black        : rgb(0,0,0);
+@darkgrey     : tint(@black, 30%);
+@midgrey      : tint(@black, 50%);
+@grey         : tint(@black, 60%);
+@lightgrey    : tint(@black, 70%);
+@lightergrey  : tint(@black, 85%);
+@lightestgrey : tint(@black, 93%);
+@white        : rgb(255,255,255);
+
+// Links
+@linkcolor        : @primarycolor;
+@linkcolorhover   : tint(@linkcolor, 30%);
+@linkcolorvisited  : @linkcolor;
+@linkcolorfocus   : @linkcolorhover;
+
+// colour palettes
+@primarycolor : @blue;
+@primarycolorcontrast: @white;
+@alertcolor   : rgb(252,248,227);
+@dangercolor   : rgb(218,79,73);
+@infocolor    : rgb(217,237,247);
+@successcolor   : rgb(91,183,91);
+@warningcolor   : rgb(250,167,50);
+
+// social media colors
+@twitter: #00aced;
+@facebook: #3b5998;
+@googleplus: #dd4b39;
+@pinterest: #cb2027;
+@linkedin: #007bb6;
+@youtube: #E12601;
+@vimeo: #aad450;
+@tumblr: #32506d;
+@instagram: #e4405f;
+@flickr: #ff0084;
+@yelp: #BE1B04;
+
+// 4. TEXTURE         ==============================
+
+// borders
+@bordercolor:   @lighterneutralcolor;
+@borderradius: 4px;
+
+// consistent drop shadow
+.shadow() {
+  box-shadow: 1px 1px 15px rgba(0,0,0,0.3);
+}
+
+// alert
+@alertbordercolor : darken(@alertcolor, 20%);
+@alertborderwidth   : 1px;
+@alertborderstyle   : solid;
+@alerttext      : darken(@alertcolor, 60%);
+
+// alert-danger
+@alertdangercolor  : lighten(@dangercolor, 30%);
+@alertdangerborder   : lighten(@dangercolor, 20%);
+@alertdangertext   : @dangercolor; 
+
+// alert-info
+@alertinfocolor   : @infocolor;
+@alertinfoborder    : lighten(@infocolor, 20%);
+@alertinfotext    : darken(@infocolor, 50%);
+
+// alert-success
+@alertsuccesscolor  : lighten(@successcolor, 30%);
+@alertsuccessborder : lighten(@successcolor, 20%);
+@alertsuccesstext   : darken(@successcolor, 20%); 
+
+// alert-warning
+@alertwarningcolor  : lighten(@warningcolor, 30%);
+@alertwarningborder : lighten(@warningcolor, 20%);
+@alertwarningtext   : darken(@warningcolor, 20%); 
+
+// badges 
+@badgebackground  : @lightergrey;
+@badgecolor     : @grey;
+
+// buttons
+@buttonbackground       : @lightergrey;
+@buttonbackgroundhover  : shade(@buttonbackground, 10%);
+@buttonbordercolor      : shade(@buttonbackground, 10%);
+@buttoncolor            : @textcolor;
+@buttoncolorhover       : @buttoncolor;
+@buttonborderwidth      : 1px;
+@buttonborderstyle      : solid;
+@buttonborderradius     : @borderradius;
+
+// tables 
+@tablebackground  : transparent;
+@tablestripe    : @lightestneutralcolor;
+@tablehover     : @lightneutralcolor;
+@tableborder    : @lighterneutralcolor;
+@tableborderwidth : 1px;
+@tableborderstyle : solid;
+@tablecellpadding : 8px;
+
+// forms 
+@inputbackground  : @white; 
+@inputborder    : @bordercolor;
+@inputborderwidth : 1px;
+@inputborderradius : 4px;
+@inputborderstyle : solid;
+@inputhover     : shade(@inputborder, 20%);
+@inputfocus     : shade(@bordercolor, 30%);
+@placeholdercolor   : @lightertextcolor;
+
+// Nav
+@navText:                      @textcolor;
+@navLinkBackground:            @lightergrey;
+@navLinkColor:                 @linkcolor;
+@navLinkColorHover:            @linkcolorhover;
+@navLinkColorCurrent:          @darkgrey;
+@navLinkBackgroundHover:       @grey;
+@navLinkBackgroundCurrent:     @primarycolor;
+
+
+// 6. LAYOUT        ==============================
+
+@gutterwidth: 1rem;
+
+// Column widths
+@goldenlarger: 62%;
+@goldensmaller: 38%;
+@twothirds: 66.667%;
+@onethird: 33.333%;
+@threequarters: 75%;
+@onequarter: 25%;
+@onehalf: 50%;
+
+// Column breakpoints
+@column-breakpoint-sm: 40em;
+@column-breakpoint-med: 52em;
+
+// Thumbnail Grid breakpoints
+@grid-bp1: 30em;
+@grid-bp2: 45em;
+@grid-bp3: 55em;
+@grid-bp4: 60em;
+@grid-bp5: 70em;

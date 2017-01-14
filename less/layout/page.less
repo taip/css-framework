@@ -1,0 +1,35 @@
+.skip {
+  .visuallyhidden();
+}
+
+.container {
+  margin: 0 auto;
+  padding-left: 5%;
+  padding-right: 5%;
+  clear: both;
+  .clearfix;
+}
+
+.row {
+  .clearfix;
+}
+
+.row--margined {
+  .clearfix;
+  margin-bottom: @baselineheight;
+  &:last-of-type,
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+.row--bordered {
+  .clearfix;
+  border-bottom: 1px solid @bordercolor;
+  padding-bottom: @baselineheight;
+  margin-bottom: @baselineheight;
+  &:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+}
